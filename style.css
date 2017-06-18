@@ -1,36 +1,89 @@
-*{margin: 0px; padding: 0px;}
-main,header,section,nav,footer,p,button {display: block;}
-#wrapper {margin: 0px auto;
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+main, header, section, nav, footer, p, button {
+    display: block;
+}
+
+#wrapper {
+    margin: 0px auto;
     width: 1000px;
     background: #ffffff;
-    color: #000000;}
-
-img{width: 200px;
-    height: 200px;}
-h1,h2,h3,h4{
     color: #000000;
-    font-size: 180%;
+
 }
-section{
+
+.ul_col {
+    color: red;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.B {
+    color: #08006a;
+    font-size: 200%;
+
+}
+
+.B1 {
+    color: #395372;
+    font-size: 150%;
+}
+
+.B2 {
+    color: #395372;
+    font-size: larger;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: larger;
+}
+
+.verb {
+    background: #293aff;
+    border-radius: 5px;
+    width: 120px;
+    padding: 5px;
+    color: #fbfbfb;
+}
+
+ul > li > a {
+    color: #1d526a;
+    font-size: large;
+    font-weight: bold;
+}
+
+section {
     color: #000000;
     font-size: 150%;
 }
+
 tb, tr, td {
     border: 1px solid #979797;
     border-collapse: separate;
     font-size: medium;
-    height:35px;
+    height: 35px;
     padding-left: 5px;
 }
-table{
+
+table {
+    color: #979797;
     font-family: 'Rokkitt', serif;
     font-family: 'Inconsolata', monospace;
     border-collapse: separate;
     width: 100%;
+    padding-left: 5px;
 }
-pre{
+
+.prex {
     font-family: 'Inconsolata', monospace;
-    background: #bfbfbf;
+    background: #acafaf;
     color: #fbfbfb;
     font-size: medium;
     height: auto;
@@ -42,7 +95,10 @@ pre{
     border: solid 1px #979797;
 }
 
-tr:nth-child(even) {background-color: #f1f1f1}
+tr:nth-child(even) {
+    background-color: #f1f1f1
+}
+
 th {
     padding-left: 5px;
     background-color: #242D3E;
