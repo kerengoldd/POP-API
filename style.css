@@ -12,9 +12,8 @@ main, header, section, nav, footer, p, button {
     width: 1000px;
     background: #ffffff;
     color: #000000;
-
+    font-family: 'Futura';
 }
-
 .ul_col {
     color: red;
 }
@@ -27,7 +26,6 @@ img {
 .B {
     color: #08006a;
     font-size: 200%;
-
 }
 
 .B1 {
@@ -105,4 +103,10 @@ th {
     font-size: large;
     color: white;
     height: 40px;
+}
+#logo{
+    padding-right: -10px;
+    height: 60px;
+    width: 30px;
+    display: inline-block;
 }
