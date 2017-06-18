@@ -10,7 +10,7 @@ main, header, section, nav, footer, p, button {
 #wrapper {
     margin: 0px auto;
     width: 1000px;
-    background: #ffffff;
+    background: #f4f4f4;
     color: #000000;
     font-family: 'Futura';
 }
@@ -24,8 +24,9 @@ img {
 }
 
 .B {
-    color: #08006a;
+    color: #000000;
     font-size: 200%;
+    font-weight: bold;
 }
 
 .B1 {
@@ -110,3 +111,9 @@ th {
     width: 30px;
     display: inline-block;
 }
+.greenText{
+    color: #1fcd19;
+}
+.redText{
+     color: #cd2d26 !important;
+ }

@@ -14,12 +14,13 @@
 <body id="wrapper">
 <section><h1 class="B"><img src="logo.png" id="logo"> POPZIT API</h1>
     <h3>API Documnetion </h3>
+    <h3>root: http://localhost:3000/</h3>
     <h5> &#169; Keren Gold & Yoav Saroya</h5>
 
     <div class="contanier">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">User API</a></li>
-            <li><a data-toggle="tab" href="#menu2">Music API</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">Users</a></li>
+            <li><a data-toggle="tab" href="#menu2">Music</a></li>
         </ul>
 
         <div class="tab-content">
@@ -34,7 +35,7 @@
 
                     <div class="tab-content">
                         <div id="signup" class="tab-pane fade in active">
-                            <h2 class="B2"> Users - User Sign Up</h2>
+                            <h2 class="B2"> User Sign Up</h2>
                             <pre class="prex">/user/signup</pre>
                             <h4 class="verb">Verb: POST</h4>
                             <h5>Example Request:</h5>
@@ -46,7 +47,7 @@
     "birthdate":"31/12/1990"
     }
                             </pre>
-                            <h5>Parameter</h5>
+                            <h5>Parameters:</h5>
                             <table>
                                 <tr>
                                     <th>Field</th>
@@ -80,20 +81,21 @@
                                 </tr>
                             </table>
                             <hr>
-                            <h3>Success 201</h3>
+                            <h3 class="greenText">Success 201</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     message:"User Created"
-    obj:Object
-    date:"1990-12-31T22:00:00.000Z"
-    email:"keren@gmail.com"
-    firstName:"keren"
-    gravatarHash:"acfa3f84eb23cf9dd6d1128decf9cbf0"
-    lastName:"nina"
-    password:"$2a$10$554qYDMfe3Q1lJ8ysw915u24E3dtzM.YbAWj4AaQ.jYuOQqkYrW1."
+    obj: {
+        birthdate:"1990-12-31T22:00:00.000Z"
+        email:"keren@gmail.com"
+        firstName:"keren"
+        gravatarHash:"acfa3f84eb23cf9dd6d1128decf9cbf0"
+        lastName:"nina"
+        password:"$2a$10$554qYDMfe3Q1lJ8ysw915u24E3dtzM.YbAWj4AaQ.jYuOQqkYrW1
+    }
  </pre>
                             <hr>
-                            <h3>Error 500</h3>
+                            <h3 class="redText">Error 500</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     Object {title: "An error occured", error: Object}
@@ -106,7 +108,7 @@
                             <hr>
                         </div>
                         <div id="signin" class="tab-pane fade">
-                            <h2 class="B2"> Users - User Sign In</h2>
+                            <h2 class="B2">  User Sign In</h2>
                             <pre class="prex">/user/signin</pre>
                             <h4 class="verb">Verb: POST</h4>
                             <h5>Example Request:</h5>
@@ -116,7 +118,7 @@
     "password":"*******"
     }
                             </pre>
-                            <h5>Parameter</h5>
+                            <h5>Parameters:</h5>
                             <table>
                                 <tr>
                                     <th>Field</th>
@@ -134,7 +136,23 @@
                                     <td>User password must contain 6 charecters</td>
                                 </tr>
                             </table>
-                            <h3>Error 401</h3>
+                            <h3 class="greenText">Success 200</h3>
+                            <h5>Example Response:</h5>
+                            <pre class="prex">
+    {
+    "message":"Successfully logged in",
+    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjU5NDNkOGU3NjkyZTIzNDFlYTIxMzIwNSIsImVtYWlsIjoia2VyZW5nb2w1NUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRGSnc2b3JOVjBHRGhhTDBDa3lpT3RPRzhINTU5WHAzUlQwbGZ5Y2ZEWUJzNVpBODlnU3NjcSIsImZpcnN0TmFtZSI6IktFUkVOSU5BIiwibGFzdE5hbWUiOiJOSU5BIiwiZGF0ZSI6IjE5NDktMDItMDFUMjI6MDA6MDAuMDAwWiIsImdyYXZhdGFySGFzaCI6ImE1ZjFlMTBlZDQ3YjQ1ODI3YWRiODZkM2NlODVhMmY3IiwiX192IjowfSwiaWF0IjoxNDk3NzA0MDM5LCJleHAiOjE0OTc3MTEyMzl9.FTOkftPX77MPFccJ8wC6R7e4PwqRXXv7vqUkaV6gQ_M",
+    "user":{"_id":"5943d8e7692e2341ea213205",
+    "email":"keren@gmail.com",
+    "password":"$2a$10$FJw6orNV0GDhaL0CkyiOtOG8H559Xp3RT0lfycfDYBs5ZA89gSscq",
+    "firstName":"keren",
+    "lastName":"nina",
+    "date":"1949-02-01T22:00:00.000Z",
+    "gravatarHash":"a5f1e10ed47b45827adb86d3ce85a2f7",
+    "__v":0},"userId":"5943d8e7692e2341ea213205"
+    }
+                            </pre>
+                            <h3 class="redText">Error 401</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     Response {_body:
@@ -152,7 +170,7 @@
     __proto__: Body
                             </pre>
                             <hr>
-                            <h3>Error 500</h3>
+                            <h3 class="redText">Error 500</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
         {"title":"An error occured",
@@ -210,23 +228,6 @@
         expected `email` to be unique. Value: `kerengol55@gmail.com`"}}
 </pre>
                             <hr>
-                            <h3>Success 200</h3>
-                            <h5>Example Response:</h5>
-                            <pre class="prex">
-    {
-    "message":"Successfully logged in",
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjU5NDNkOGU3NjkyZTIzNDFlYTIxMzIwNSIsImVtYWlsIjoia2VyZW5nb2w1NUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRGSnc2b3JOVjBHRGhhTDBDa3lpT3RPRzhINTU5WHAzUlQwbGZ5Y2ZEWUJzNVpBODlnU3NjcSIsImZpcnN0TmFtZSI6IktFUkVOSU5BIiwibGFzdE5hbWUiOiJOSU5BIiwiZGF0ZSI6IjE5NDktMDItMDFUMjI6MDA6MDAuMDAwWiIsImdyYXZhdGFySGFzaCI6ImE1ZjFlMTBlZDQ3YjQ1ODI3YWRiODZkM2NlODVhMmY3IiwiX192IjowfSwiaWF0IjoxNDk3NzA0MDM5LCJleHAiOjE0OTc3MTEyMzl9.FTOkftPX77MPFccJ8wC6R7e4PwqRXXv7vqUkaV6gQ_M",
-    "user":{"_id":"5943d8e7692e2341ea213205",
-    "email":"keren@gmail.com",
-    "password":"$2a$10$FJw6orNV0GDhaL0CkyiOtOG8H559Xp3RT0lfycfDYBs5ZA89gSscq",
-    "firstName":"keren",
-    "lastName":"nina",
-    "date":"1949-02-01T22:00:00.000Z",
-    "gravatarHash":"a5f1e10ed47b45827adb86d3ce85a2f7",
-    "__v":0},"userId":"5943d8e7692e2341ea213205"
-    }
-                            </pre>
-                            <hr>
                         </div>
                     </div>
                 </div>
@@ -236,20 +237,19 @@
                 <h1 class="B1">Music</h1>
                 <div class="contanier">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#getall">Get all subgeners</a></li>
+                        <li class="active"><a data-toggle="tab" href="#getall">Get all subgenres</a></li>
                         <li><a data-toggle="tab" href="#getalbum">Get album </a></li>
                         <li><a data-toggle="tab" href="#getsong">Get song </a></li>
-                        <li><a data-toggle="tab" href="#getyoutube">Get Youtube PlayList </a></li>
-                        <li><a data-toggle="tab" href="#getparesed">Get parsed song </a></li>
+                        <li><a data-toggle="tab" href="#getyoutube">Get Youtube song </a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="getall" class="tab-pane fade in active">
-                            <h2 class="B2">Music - get all subgeners</h2>
+                            <h2 class="B2">Get all subgenres</h2>
                             <pre class="prex">/music/defaultSubgenres</pre>
                             <h4 class="verb">Verb: GET</h4>
                             <h5>Example Request:</h5>
-                            <h6>Show by default all the subgeners</h6>
-                            <h3>Success 201</h3>
+                            <h6>Show by default all the subgenres</h6>
+                            <h3 class="greenText">Success 201</h3>
                             <h5>Example Response:</h5>
 
                             <pre class="prex">
@@ -5603,12 +5603,12 @@
                             <hr>
                         </div>
                         <div id="getalbum" class="tab-pane fade">
-                            <h2 class="B2"> Music - get album by artist and Album</h2>
+                            <h2 class="B2"> Get album by artist and album name</h2>
                             <pre class="prex">/music/album</pre>
                             <h4 class="verb">Verb: GET</h4>
                             <h5>Example Request:</h5>
                             <pre class="prex">http://localhost:3000/music/album?album=Believe&&artist=Cher</pre>
-                            <h5>Parameter</h5>
+                            <h5>Parameters:</h5>
                             <table>
                                 <tr>
                                     <th>Field</th>
@@ -5627,7 +5627,7 @@
                                 </tr>
                             </table>
                             <hr>
-                            <h3>Success 201</h3>
+                            <h3 class="greenText">Success 201</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     {
@@ -5661,7 +5661,7 @@
         }
                             </pre>
                             <hr>
-                            <h3>Error 400</h3>
+                            <h3 class="redText">Error 400</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     {
@@ -5673,12 +5673,12 @@
 
                         <div id="getsong" class="tab-pane fade">
 
-                            <h2 class="B2">Music - get songs by artist name and track name</h2>
+                            <h2 class="B2">Get songs by artist name and track name</h2>
                             <pre class="prex">/music/song</pre>
                             <h4 class="verb">Verb: GET</h4>
                             <h5>Example Request:</h5>
                             <pre class="prex">http://localhost:3000/music/song?track=Belive&&artist=Cher</pre>
-                            <h5>Parameter</h5>
+                            <h5>Parameters:</h5>
                             <table>
                                 <tr>
                                     <th>Field</th>
@@ -5697,7 +5697,7 @@
                                 </tr>
                             </table>
                             <hr>
-                            <h3>Success 201</h3>
+                            <h3 class="greenText">Success 201</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
         {
@@ -5924,7 +5924,7 @@
         }
 }                       </pre>
                             <hr>
-                            <h3>Error 400</h3>
+                            <h3 class="redText">Error 400</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     {
@@ -5935,12 +5935,12 @@
                         </div>
                         <div id="getyoutube" class="tab-pane fade">
 
-                            <h2 class="B2">Music - get Youtube PlayList</h2>
+                            <h2 class="B2">Get Youtube song</h2>
                             <pre class="prex">/music/youtubeSong</pre>
                             <h4 class="verb">Verb: GET</h4>
                             <h5>Example Request:</h5>
                             <pre class="prex">http://localhost:3000/music/youtubeSong?track=Believe&&artist=Cher</pre>
-                            <h5>Parameter</h5>
+                            <h5>Parameters:</h5>
                             <table>
                                 <tr>
                                     <th>Field</th>
@@ -5959,7 +5959,7 @@
                                 </tr>
                             </table>
                             <hr>
-                            <h3>Success 200</h3>
+                            <h3 class="greenText">Success 200</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     [{
@@ -5989,7 +5989,7 @@
     ]
                             </pre>
                             <hr>
-                            <h3>Error 400</h3>
+                            <h3 class="redText">Error 400</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     {
@@ -5997,7 +5997,7 @@
     }
                             </pre>
                             <hr>
-                            <h3>Error 500</h3>
+                            <h3 class="redText">Error 500</h3>
                             <h5>Example Response:</h5>
                             <pre class="prex">
     {
@@ -6006,33 +6006,7 @@
                             </pre>
                             <hr>
                         </div>
-                        <div id="getparesed" class="tab-pane fade">
 
-                            <h2 class="B2">Music - get Song Parsed</h2>
-                            <pre class="prex">music/song/getSongParsed</pre>
-                            <h4 class="verb">Verb: GET</h4>
-                            <h5>Example Request:</h5>
-                            <pre class="prex">http://localhost:3000/music/song/getSongParsed?track=Believe&&artist=cher</pre>
-                            <h5>Parameter</h5>
-                            <table>
-                                <tr>
-                                    <th>Field</th>
-                                    <th>Type</th>
-                                    <th>Description</th>
-                                </tr>
-                                <tr>
-                                    <td>track</td>
-                                    <td>String</td>
-                                    <td>Track Name</td>
-                                </tr>
-                                <tr>
-                                    <td>artist</td>
-                                    <td>String</td>
-                                    <td>Artist name</td>
-                                </tr>
-                            </table>
-                            <hr>
-                        </div>
                     </div>
                 </div>
             </div>
